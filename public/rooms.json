@@ -2,28 +2,28 @@
     {
       "location": "Sidemen, Bali",
       "image": "https://a0.muscache.com/im/pictures/4f70b681-a792-4530-8c52-f2a8d262942d.jpg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 456,
       "category": "Beach"
     },
     {
       "location": "Abiansemal, Bali",
       "image": "https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 513,
       "category": "Windmills"
     },
     {
       "location": "Kecamatan Ubud, Bali",
       "image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-46761225/original/11058c0d-fac8-4035-8f16-8b3abe7441cd.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 456,
       "category": "Modern"
     },
     {
       "location": "Koh samui, Thailand",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-820950793239599563/original/d5c1f686-f06a-4b65-9f55-32e19dc0b23f.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 513,
       "category": "Countryside"
     },
@@ -31,43 +31,113 @@
     {
       "location": "Surat Thani, Thailand",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-820954888871612167/original/f37e01a9-cb1a-446d-be7e-c1d62d1f1c23.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 456,
       "category": "Windmills"
     },
     {
       "location": "Khao Lak, Thailand",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826025597172937112/original/d6bbe2ca-9337-4a7e-a5d3-ca8fe72821db.jpeg?im_w=1200",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 345,
       "category": "Windmills"
     },
     {
       "location": "Kecamatan Selemadeg, Bali",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-807995199727408777/original/3ba641e8-f9be-41cb-b834-aba9695726fa.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 513,
       "category": "Beach"
     },
     {
       "location": "Khao Lak, Thailand",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826732383054098647/original/457337ee-af64-462f-90d0-b9fa1ce98a73.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 213,
       "category": "Windmills"
     },
     {
       "location": "Khao Lak, Thailand",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-826726918494647682/original/d1586407-7873-4c15-91e2-61ab713d2aca.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 213,
       "category": "Windmills"
     },
     {
       "location": "Kecamatan Ubud, Bali",
       "image": "https://a0.muscache.com/im/pictures/miso/Hosting-812919482265584093/original/c60bc2f2-7d16-4f7d-acf2-44c2f855fb81.jpeg",
-      "dateRange": "Jan 9, 2024 - Jan 14, 2024",
+      "dateRange": "Jan 9 - 14",
       "price": 213,
       "category": "Pools"
-    }
+    },
+    {
+        "location": "Phi Phi Islands, Thailand",
+        "image": "https://i.ibb.co/PZj8ckk/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 789,
+        "category": "Beach"
+      },
+      {
+        "location": "Seminyak, Bali",
+        "image": "https://i.ibb.co/99Ymp0z/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 654,
+        "category": "Windmills"
+      },
+      {
+        "location": "Chiang Mai, Thailand",
+        "image": "https://i.ibb.co/J7mfntz/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 389,
+        "category": "Pools"
+      },
+      {
+        "location": "Krabi, Thailand",
+        "image": "https://i.ibb.co/h79jq98/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 456,
+        "category": "Countryside"
+      },
+      {
+        "location": "Ubud, Bali",
+        "image": "https://i.ibb.co/wcTPQ7q/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 567,
+        "category": "Pools"
+      },
+      {
+        "location": "Phuket, Thailand",
+        "image": "https://i.ibb.co/rpCV0Sx/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 789,
+        "category": "Windmills"
+      },
+      {
+        "location": "Koh Phi Phi Leh, Thailand",
+        "image": "https://i.ibb.co/w4ZYYKQ/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 890,
+        "category": "Countryside"
+      },
+      {
+        "location": "Kuta, Bali",
+        "image": "https://i.ibb.co/0q2QKtR/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 456,
+        "category": "Countryside"
+      },
+      {
+        "location": "Hua Hin, Thailand",
+        "image": "https://i.ibb.co/x65Jkbr/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 345,
+        "category": "Windmills"
+      },
+      {
+        "location": "Ao Nang, Thailand",
+        "image": "https://i.ibb.co/0tMxvTv/image.png",
+        "dateRange": "Jan 16 - 21",
+        "price": 456,
+        "category": "Beach"
+      }
   ]
