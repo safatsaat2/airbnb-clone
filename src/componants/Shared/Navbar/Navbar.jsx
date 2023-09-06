@@ -1,7 +1,7 @@
-import { Container } from 'postcss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import MenuDropdown from './MenuDropdown';
 
 const Navbar = () => {
     return (
@@ -15,7 +15,7 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <Search/>
-                        <div>Menu</div>
+                        <MenuDropdown/>
                     </div>
                 </div>
                 
