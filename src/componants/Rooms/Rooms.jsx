@@ -14,11 +14,17 @@ const Rooms = () => {
         fetch("/public/rooms.json")
         .then(res => res.json())
         .then(data => {
-            setRooms(data)
+            if(category){
+                const filteredData = data.filter(room => room.category === category)
+                setRooms(filteredData)
+            }
+            else{
+                setRooms(data)
+            }
             setLoading(false)
         })
         .catch(err => console.log(err))
-    },[])
+    },[category])
     if(loading){
         return <Loader/>
     }
