@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Loader from '../Shared/Loader/Loader';
+import { useSearchParams } from 'react-router-dom';
 
 const Rooms = () => {
+    const [params, setParams] = useSearchParams()
+    
     const [rooms, setRooms] = useState([])
     const [loading, setLoading] = useState(false)
+    const category = params.get("category")
     useEffect(() => {
         setLoading(true)
         fetch("/public/rooms.json")
