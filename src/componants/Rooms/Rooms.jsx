@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Loader from '../Shared/Loader/Loader';
 import { useSearchParams } from 'react-router-dom';
+import { getRooms } from '../../api/rooms';
 
 const Rooms = () => {
     const [params, setParams] = useSearchParams()
@@ -11,8 +12,7 @@ const Rooms = () => {
     const category = params.get("category")
     useEffect(() => {
         setLoading(true)
-        fetch("/public/rooms.json")
-        .then(res => res.json())
+        getRooms()
         .then(data => {
             if(category){
                 const filteredData = data.filter(room => room.category === category)
