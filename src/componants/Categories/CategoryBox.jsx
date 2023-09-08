@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 import React from 'react';
-import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import {  useNavigate, useSearchParams } from 'react-router-dom';
 
 const CategoryBox = ({label, icon:Icon}) => {
     const [params, setParams] = useSearchParams()
@@ -8,6 +8,7 @@ const CategoryBox = ({label, icon:Icon}) => {
     const navigate  = useNavigate()
 
     const handleClick = () => {
+        console.log(params)
         let currentQuery = {
             
         }
