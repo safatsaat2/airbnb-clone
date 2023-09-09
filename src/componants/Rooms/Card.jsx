@@ -35,13 +35,22 @@ const Card = ({room}) => {
           </div>
         </div>
         <div className='font-semibold text-lg'>{room.location}</div>
+        <div className='font-semibold text-sm'>{room.category}</div>
         <div className='font-light text-neutral-500'>
         {room.dateRange}
         </div>
         <div className='flex flex-row items-center gap-1'>
           <div className='font-semibold'>$ {room.price}</div>
           <div className='font-light'>night</div>
+          
         </div>
+        <div className='grid grid-cols-2 justify-between gap-y-2 items-center '>
+          <p className='text-[10px]'>Bed: {room.bed}</p>
+          <p className='text-[10px]'>Bedroom: {room.bedroom}</p>
+          <p className='text-[10px]'>Bathroom: {room.bathroom}</p>
+          <p className='text-[10px]'>Types of Places: {room.type}</p>
+        </div>
+        
       </div>
     </div>
   )
