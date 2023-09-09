@@ -13,6 +13,8 @@ const Modal = () => {
     const [params, setParams] = useSearchParams()
     const bedValue = params.get("bed")
     const bedroomValue = params.get("bedroom")
+    const bathroomValue = params.get("bathroom")
+    const typesPlaceValue = params.get("type")
     const navigate = useNavigate()
 
     const handleBed = (e) => {
@@ -58,9 +60,41 @@ const Modal = () => {
     }
     const handleBathroom = (e) => {
         setBathroom(e.target.value)
+        let currentQuery = {
+            
+        }
+        if(params){
+            currentQuery = queryString.parse(params.toString())
+        }
+        const updatedQuery= {
+            ...currentQuery, bathroom: e.target.value, 
+        }
+
+        const url = queryString.stringifyUrl({
+            url:"/",
+            query: updatedQuery
+        }, {skipNull: false})
+
+        navigate(url)
     }
     const handleTypesPlace = (e) => {
         setTypesPlace(e.target.value)
+        let currentQuery = {
+            
+        }
+        if(params){
+            currentQuery = queryString.parse(params.toString())
+        }
+        const updatedQuery= {
+            ...currentQuery, typesPlace: e.target.value, 
+        }
+
+        const url = queryString.stringifyUrl({
+            url:"/",
+            query: updatedQuery
+        }, {skipNull: false})
+
+        navigate(url)
     }
 
 
@@ -237,72 +271,72 @@ const Modal = () => {
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">Any</span>
-                                <input type="radio" onClick={handleBathroom} value={''} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={''} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">1</span>
-                                <input type="radio" onClick={handleBathroom} value={1} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={1} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">2</span>
-                                <input type="radio" onClick={handleBathroom} value={2} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleBathroom} value={2} name="radio-30" className="radio " />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">3</span>
-                                <input type="radio" onClick={handleBathroom} value={3} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={3} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">4</span>
-                                <input type="radio" onClick={handleBathroom} value={4} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleBathroom} value={4} name="radio-30" className="radio " />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">5</span>
-                                <input type="radio" onClick={handleBathroom} value={5} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={5} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">6</span>
-                                <input type="radio" onClick={handleBathroom} value={6} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleBathroom} value={6} name="radio-30" className="radio " />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">7</span>
-                                <input type="radio" onClick={handleBathroom} value={7} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={7} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">8</span>
-                                <input type="radio" onClick={handleBathroom} value={8} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleBathroom} value={8} name="radio-30" className="radio " />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">9</span>
-                                <input type="radio" onClick={handleBathroom} value={9} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBathroom} value={9} name="radio-30" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">10</span>
-                                <input type="radio" onClick={handleBathroom} value={10} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleBathroom} value={10} name="radio-30" className="radio " />
                             </label>
                         </div>
                     </div>
@@ -314,20 +348,20 @@ const Modal = () => {
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">Entire Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'entire'} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleTypesPlace} value={'entire'} name="radio-40" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">Shared Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'shared'} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleTypesPlace} value={'shared'} name="radio-40" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
                             <label className="label cursor-pointer">
                                 <span className="label-text">Single Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'single'} name="radio-10" className="radio " />
+                                <input type="radio" onClick={handleTypesPlace} value={'single'} name="radio-40" className="radio " />
                             </label>
                         </div>
                     </div>
