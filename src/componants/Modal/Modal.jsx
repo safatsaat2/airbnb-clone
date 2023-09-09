@@ -17,24 +17,44 @@ const Modal = () => {
     const typesPlaceValue = params.get("type")
     const navigate = useNavigate()
 
-    const handleBed = (e) => {
-        const bedValue = e.target.value
-        setBed(bedValue)
-
+    const handleClick = () => {
         let currentQuery = {
-            
+
         }
-        if(params){
+        if (params) {
             currentQuery = queryString.parse(params.toString())
         }
-        const updatedQuery= {
-            ...currentQuery, bed: e.target.value, 
+        const updatedQuery = {
+            ...currentQuery,
         }
 
         const url = queryString.stringifyUrl({
-            url:"/",
+            url: "/",
             query: updatedQuery
-        }, {skipNull: false})
+        }, { skipNull: true })
+
+        navigate(url)
+        console.log('Current Query:', currentQuery);
+        console.log('Updated Query:', updatedQuery);
+        console.log('New URL:', url);
+
+    }
+    const handleBed = (e) => {
+
+        let currentQuery = {
+
+        }
+        if (params) {
+            currentQuery = queryString.parse(params.toString())
+        }
+        const updatedQuery = {
+            ...currentQuery, bed: e.target.value,
+        }
+
+        const url = queryString.stringifyUrl({
+            url: "/",
+            query: updatedQuery
+        }, { skipNull: true })
 
         navigate(url)
 
@@ -42,78 +62,85 @@ const Modal = () => {
     const handleBedroom = (e) => {
         setBedroom(e.target.value)
         let currentQuery = {
-            
+
         }
-        if(params){
+        if (params) {
             currentQuery = queryString.parse(params.toString())
         }
-        const updatedQuery= {
-            ...currentQuery, bedroom: e.target.value, 
+        const updatedQuery = {
+            ...currentQuery, bedroom: e.target.value,
         }
 
         const url = queryString.stringifyUrl({
-            url:"/",
+            url: "/",
             query: updatedQuery
-        }, {skipNull: false})
+        }, { skipNull: false })
 
         navigate(url)
     }
     const handleBathroom = (e) => {
         setBathroom(e.target.value)
         let currentQuery = {
-            
+
         }
-        if(params){
+        if (params) {
             currentQuery = queryString.parse(params.toString())
         }
-        const updatedQuery= {
-            ...currentQuery, bathroom: e.target.value, 
+        const updatedQuery = {
+            ...currentQuery, bathroom: e.target.value,
         }
 
         const url = queryString.stringifyUrl({
-            url:"/",
+            url: "/",
             query: updatedQuery
-        }, {skipNull: false})
+        }, { skipNull: false })
 
         navigate(url)
     }
     const handleTypesPlace = (e) => {
         setTypesPlace(e.target.value)
         let currentQuery = {
-            
+
         }
-        if(params){
+        if (params) {
             currentQuery = queryString.parse(params.toString())
         }
-        const updatedQuery= {
-            ...currentQuery, typesPlace: e.target.value, 
+        const updatedQuery = {
+            ...currentQuery, typesPlace: e.target.value,
         }
 
         const url = queryString.stringifyUrl({
-            url:"/",
+            url: "/",
             query: updatedQuery
-        }, {skipNull: false})
+        }, { skipNull: false })
 
         navigate(url)
+    }
+
+    const resetHandler = () =>{
+        navigate("/")
     }
 
 
     return (
         <div className='max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4'>
-            <button className="btn bg-rose-500 text-white hover:text-black" onClick={() => document.getElementById('my_modal_5').showModal()}>Filter</button>
+            <div className='flex items-center gap-x-4'>
+                <button className="btn bg-rose-500 text-white hover:text-black" onClick={() => document.getElementById('my_modal_5').showModal()}>Filter</button>
+                <button onClick={resetHandler} className="btn bg-rose-500 text-white hover:text-black">Reset Filter</button>
+            </div>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
 
                 <div className="modal-box">
 
 
                     {/* Bed */}
-                    <h1 className='font-bold text-lg my-5'>Bed</h1>
+                    <h1 className='font-bold text-lg my-5'>Bed *</h1>
                     <div className='grid grid-cols-5 gap-x-2'>
                         <div className="form-control mr-5">
 
                             <label className="label cursor-pointer">
                                 <span className="label-text">Any</span>
-                                <input type="radio" onClick={handleBed} value={null} name="radio-10" className="radio" />
+                                <input type="radio" onClick={handleBed} value={""} name="radio-10" className="radio" />
                             </label>
                         </div>
                         <div className="form-control mr-5">
@@ -186,7 +213,7 @@ const Modal = () => {
 
 
                     {/* Bedroom */}
-                    <h1 className='font-bold text-lg my-5'>Bedrooms</h1>
+                    <h1 className='font-bold text-lg my-5'>Bedrooms *</h1>
                     <div className='grid grid-cols-5 gap-x-2'>
                         <div className="form-control mr-5">
 
@@ -265,7 +292,7 @@ const Modal = () => {
 
 
                     {/* Bathroom */}
-                    <h1 className='font-bold text-lg my-5'>Bathrooms</h1>
+                    <h1 className='font-bold text-lg my-5'>Bathrooms *</h1>
                     <div className='grid grid-cols-5 gap-x-2'>
                         <div className="form-control mr-5">
 
@@ -342,7 +369,7 @@ const Modal = () => {
                     </div>
                     {/* Bathroom */}
                     {/* Type of Places */}
-                    <h1 className='font-bold text-lg my-5'>Types of Places</h1>
+                    <h1 className='font-bold text-lg my-5'>Types of Places *</h1>
                     <div className='grid grid-cols-3 gap-x-5'>
                         <div className="form-control mr-5">
 
@@ -370,7 +397,7 @@ const Modal = () => {
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn bg-rose-500 text-white hover:text-black">Apply</button>
+                            <button onClick={handleClick} className="btn bg-rose-500 text-white hover:text-black">Close</button>
                         </form>
                     </div>
                 </div>

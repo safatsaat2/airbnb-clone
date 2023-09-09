@@ -4,21 +4,35 @@ import Loader from '../Shared/Loader/Loader';
 import { useSearchParams } from 'react-router-dom';
 import { getRooms } from '../../api/rooms';
 
-const Rooms = ({bed, bedroom, bathroom, typesPlace}) => {
+const Rooms = () => {
     const [params, setParams] = useSearchParams()
     
     const [rooms, setRooms] = useState([])
     const [loading, setLoading] = useState(false)
     const category = params.get("category")
+    const bed = params.get("bed")
+    const bedroom = params.get("bedroom")
+    const bathroom = params.get("bathroom")
+    const type = params.get("typesPlace")
 
-    console.log(bed, bedroom, bathroom, typesPlace)
+
+
+    
     useEffect(() => {
         setLoading(true)
         getRooms()
         .then(data => {
+            if( bed || bedroom || bathroom || type){
+                const filteredData = data.filter(room =>  room.bed == bed && room.bedroom == bedroom && room.bathroom == bathroom && room.type == type)
+                setLoading(false)
+                return setRooms(filteredData)
+                console.log(filteredData)
+            }
+            
             if(category){
                 const filteredData = data.filter(room => room.category === category)
-                setRooms(filteredData)   
+                setRooms(filteredData)
+                console.log(filteredData)
             }
             else{
                 setRooms(data)
@@ -26,7 +40,10 @@ const Rooms = ({bed, bedroom, bathroom, typesPlace}) => {
             setLoading(false)
         })
         .catch(err => console.log(err))
-    },[category])
+    },[category, bed, bathroom, bedroom, type])
+    
+
+
     
     if(loading){
         return <Loader/>
