@@ -17,28 +17,75 @@ const Modal = () => {
     const typesPlaceValue = params.get("type")
     const navigate = useNavigate()
 
-    const handleClick = () => {
-        let currentQuery = {
-
+    // Value array
+    const Items = [
+        {
+            name: "Any",
+            value: ""
+        },
+        {
+            name: "1",
+            value: 1
+        },
+        {
+            name: "2",
+            value: 2
+        },
+        {
+            name: "3",
+            value: 3
+        },
+        {
+            name: "4",
+            value: 4
+        },
+        {
+            name: "5",
+            value: 5
+        },
+        {
+            name: "6",
+            value: 6
+        },
+        {
+            name: "7",
+            value: 7
+        },
+        {
+            name: "8",
+            value: 8
+        },
+        {
+            name: "9",
+            value: 9
+        },
+        {
+            name: "10",
+            value: 10
         }
-        if (params) {
-            currentQuery = queryString.parse(params.toString())
+    ]
+    // Type Of Places Array
+    const placesItems =[
+        {
+            name: "Any",
+            value: ""
+        },
+        {
+            name: "Entire Place",
+            value: "entire"
+        },
+        {
+            name: "Shared Place",
+            value: "shared"
+        },
+        {
+            name: "Single Place",
+            value: "single"
         }
-        const updatedQuery = {
-            ...currentQuery,
-        }
+    ]
 
-        const url = queryString.stringifyUrl({
-            url: "/",
-            query: updatedQuery
-        }, { skipNull: true })
 
-        navigate(url)
-        console.log('Current Query:', currentQuery);
-        console.log('Updated Query:', updatedQuery);
-        console.log('New URL:', url);
-
-    }
+    // sets the quantity of beds to the params
     const handleBed = (e) => {
 
         let currentQuery = {
@@ -59,6 +106,8 @@ const Modal = () => {
         navigate(url)
 
     }
+
+    // sets the quantity of bedrooms to the params
     const handleBedroom = (e) => {
         setBedroom(e.target.value)
         let currentQuery = {
@@ -78,6 +127,8 @@ const Modal = () => {
 
         navigate(url)
     }
+
+    // sets the quantity of bathrooms to the params
     const handleBathroom = (e) => {
         setBathroom(e.target.value)
         let currentQuery = {
@@ -97,6 +148,8 @@ const Modal = () => {
 
         navigate(url)
     }
+
+    // sets the type of places to the params
     const handleTypesPlace = (e) => {
         setTypesPlace(e.target.value)
         let currentQuery = {
@@ -117,7 +170,8 @@ const Modal = () => {
         navigate(url)
     }
 
-    const resetHandler = () =>{
+    // Resets filter and navigate to homepage
+    const resetHandler = () => {
         navigate("/")
     }
 
@@ -134,270 +188,66 @@ const Modal = () => {
 
 
                     {/* Bed */}
-                    <h1 className='font-bold text-lg my-5'>Bed *</h1>
+                    <h1 className='font-bold text-lg my-5'>Bed </h1>
                     <div className='grid grid-cols-5 gap-x-2'>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Any</span>
-                                <input type="radio" onClick={handleBed} value={""} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">1</span>
-                                <input type="radio" onClick={handleBed} value={1} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">2</span>
-                                <input type="radio" onClick={handleBed} value={2} name="radio-10" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">3</span>
-                                <input type="radio" onClick={handleBed} value={3} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">4</span>
-                                <input type="radio" onClick={handleBed} value={4} name="radio-10" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">5</span>
-                                <input type="radio" onClick={handleBed} value={5} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">6</span>
-                                <input type="radio" onClick={handleBed} value={6} name="radio-10" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">7</span>
-                                <input type="radio" onClick={handleBed} value={7} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">8</span>
-                                <input type="radio" onClick={handleBed} value={8} name="radio-10" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">9</span>
-                                <input type="radio" onClick={handleBed} value={9} name="radio-10" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">10</span>
-                                <input type="radio" onClick={handleBed} value={10} name="radio-10" className="radio " />
-                            </label>
-                        </div>
+                        {Items.map(item => <>
+                            <div className="form-control mr-5">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">{item.name}</span>
+                                    <input type="radio" onClick={handleBed} value={item.value} name="radio-10" className="radio" />
+                                </label>
+                            </div>                        </>)}
                     </div>
                     {/* BED */}
 
 
                     {/* Bedroom */}
-                    <h1 className='font-bold text-lg my-5'>Bedrooms *</h1>
+                    <h1 className='font-bold text-lg my-5'>Bedrooms </h1>
                     <div className='grid grid-cols-5 gap-x-2'>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Any</span>
-                                <input type="radio" onClick={handleBedroom} value={''} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">1</span>
-                                <input type="radio" onClick={handleBedroom} value={1} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">2</span>
-                                <input type="radio" onClick={handleBedroom} value={2} name="radio-20" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">3</span>
-                                <input type="radio" onClick={handleBedroom} value={3} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">4</span>
-                                <input type="radio" onClick={handleBedroom} value={4} name="radio-20" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">5</span>
-                                <input type="radio" onClick={handleBedroom} value={5} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">6</span>
-                                <input type="radio" onClick={handleBedroom} value={6} name="radio-20" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">7</span>
-                                <input type="radio" onClick={handleBedroom} value={7} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">8</span>
-                                <input type="radio" onClick={handleBedroom} value={8} name="radio-20" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">9</span>
-                                <input type="radio" onClick={handleBedroom} value={9} name="radio-20" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">10</span>
-                                <input type="radio" onClick={handleBedroom} value={10} name="radio-20" className="radio " />
-                            </label>
-                        </div>
+                        {Items.map(item => <>
+                            <div className="form-control mr-5">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">{item.name}</span>
+                                    <input type="radio" onClick={handleBedroom} value={item.value} name="radio-20" className="radio" />
+                                </label>
+                            </div>
+                        </>)}
                     </div>
                     {/* BEDROOM */}
 
 
                     {/* Bathroom */}
-                    <h1 className='font-bold text-lg my-5'>Bathrooms *</h1>
+                    <h1 className='font-bold text-lg my-5'>Bathrooms</h1>
                     <div className='grid grid-cols-5 gap-x-2'>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Any</span>
-                                <input type="radio" onClick={handleBathroom} value={''} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">1</span>
-                                <input type="radio" onClick={handleBathroom} value={1} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">2</span>
-                                <input type="radio" onClick={handleBathroom} value={2} name="radio-30" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">3</span>
-                                <input type="radio" onClick={handleBathroom} value={3} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">4</span>
-                                <input type="radio" onClick={handleBathroom} value={4} name="radio-30" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">5</span>
-                                <input type="radio" onClick={handleBathroom} value={5} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">6</span>
-                                <input type="radio" onClick={handleBathroom} value={6} name="radio-30" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">7</span>
-                                <input type="radio" onClick={handleBathroom} value={7} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">8</span>
-                                <input type="radio" onClick={handleBathroom} value={8} name="radio-30" className="radio " />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">9</span>
-                                <input type="radio" onClick={handleBathroom} value={9} name="radio-30" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">10</span>
-                                <input type="radio" onClick={handleBathroom} value={10} name="radio-30" className="radio " />
-                            </label>
-                        </div>
+                        {Items.map(item => <>
+                            <div className="form-control mr-5">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">{item.name}</span>
+                                    <input type="radio" onClick={handleBathroom} value={item.value} name="radio-30" className="radio" />
+                                </label>
+                            </div>
+                        </>)}
                     </div>
                     {/* Bathroom */}
                     {/* Type of Places */}
                     <h1 className='font-bold text-lg my-5'>Types of Places *</h1>
                     <div className='grid grid-cols-3 gap-x-5'>
-                        <div className="form-control mr-5">
-
+                        {placesItems.map(item => <>
+                            <div className="form-control mr-5">
                             <label className="label cursor-pointer">
-                                <span className="label-text">Entire Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'entire'} name="radio-40" className="radio" />
+                                <span className="label-text">{item.name}</span>
+                                <input type="radio" onClick={handleTypesPlace} value={item.value} name="radio-40" className="radio" />
                             </label>
                         </div>
-                        <div className="form-control mr-5">
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Shared Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'shared'} name="radio-40" className="radio" />
-                            </label>
-                        </div>
-                        <div className="form-control mr-5">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Single Place</span>
-                                <input type="radio" onClick={handleTypesPlace} value={'single'} name="radio-40" className="radio " />
-                            </label>
-                        </div>
+                        </>)}
+                        
                     </div>
                     {/* Type of Places */}
 
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button onClick={handleClick} className="btn bg-rose-500 text-white hover:text-black">Close</button>
+                            <button className="btn bg-rose-500 text-white hover:text-black">Close</button>
                         </form>
                     </div>
                 </div>

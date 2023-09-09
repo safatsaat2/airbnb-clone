@@ -20,15 +20,22 @@ const Rooms = () => {
     
     useEffect(() => {
         setLoading(true)
+        // Getting data from database
         getRooms()
         .then(data => {
             if( bed || bedroom || bathroom || type){
-                const filteredData = data.filter(room =>  room.bed == bed && room.bedroom == bedroom && room.bathroom == bathroom && room.type == type)
+
+                // If we strict filtering
+                // const filteredData = data.filter(room =>  room.bed == bed && room.bedroom == bedroom && room.bathroom == bathroom && room.type == type)
+
+                // Filtering data
+                const filteredData = data.filter(room =>  room.bed == bed || room.bedroom == bedroom || room.bathroom == bathroom || room.type == type)
                 setLoading(false)
                 return setRooms(filteredData)
                 console.log(filteredData)
             }
             
+            // Filtering with only category
             if(category){
                 const filteredData = data.filter(room => room.category === category)
                 setRooms(filteredData)
