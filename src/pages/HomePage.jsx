@@ -1,12 +1,12 @@
 import React from 'react';
 import Categories from '../componants/Categories/Categories';
-import Rooms from '../componants/Rooms/Rooms';
+import Modal from '../componants/Modal/Modal';
 
 const HomePage = () => {
     return (
         <>
             <Categories/>
-            <Rooms/>
+            <Modal />
         </>
     );
 };

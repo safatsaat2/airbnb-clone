@@ -9,7 +9,7 @@ const Categories = () => {
             <div className='pt-24 flex items-center justify-between overflow-x-auto'>
             {categories.map(category => (<CategoryBox label={category.label} icon={category.icon} key={category.label} />))}
             </div>
-            <Modal/>
+
         </div>
     );
 };

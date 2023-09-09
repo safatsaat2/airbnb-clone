@@ -8,7 +8,7 @@ const CategoryBox = ({label, icon:Icon}) => {
     const navigate  = useNavigate()
 
     const handleClick = () => {
-        console.log(params)
+
         let currentQuery = {
             
         }
